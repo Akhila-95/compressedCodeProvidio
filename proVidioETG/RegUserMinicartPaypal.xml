@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ProvidioTestcases">
+
+  <!--  <listeners>
+		<listener class-name="com.providio.ExtentReports.ExtentReporterNG" />
+	</listeners> -->
+  <test thread-count="5" name="Automation" preserve-order="true">
+  
+	<classes>
+	
+	
+		<!-- login  --> 
+	    	<class name= "com.providio.login.tc__Login" />   
+	  
+		<!--    Mini cart paypal 	 -->	
+		
+		 
+		
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__Bundle_GcAndAllPromotions_Reg_InMC_Paypal" />
+		
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__BundleProductForReg_InMC_Paypal" />
+		
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__BySearchingProduct_Reg_InMC_Paypal" />
+		
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__OnlyGiftCards_Reg_InMC_Paypal" />
+		
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__PaypalReg_InMC_Paypal" />
+		
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__ProductSetForReg_InMC_Paypal" />
+		
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__SimpleProductAndGc_Reg_InMC_Paypal" />
+		
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__SimpleProductForReg_InMC_Paypal" />
+		
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__SimpleProductsAndBundle_Gc_Reg_InMC_Paypal" /> 
+		
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__ProductSetForReg_InMC_Paypal" /> 
+	
+		<!-- logout  -->	
+    	
+    	<class name="com.providio.logout.tc__LogOut"/>
+	    	
+	</classes>
+   </test> 
+</suite> <!-- ProvidioTestcases -->
+

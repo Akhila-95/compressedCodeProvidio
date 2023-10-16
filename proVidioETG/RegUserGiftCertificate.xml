@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ProvidioTestcases">
+
+  <!--  <listeners>
+		<listener class-name="com.providio.ExtentReports.ExtentReporterNG" />
+	</listeners> -->
+  <test thread-count="5" name="Automation" preserve-order="true">
+  
+	<classes>
+	
+	
+		<!-- login  --> 
+	    	<class name= "com.providio.login.tc__Login" />   
+	    	
+	  	<!-- Gift cetificate --> 	
+		
+		<class name= "com.RegUserWith_GiftCard.tc__Bundle_GcAndAllPromotions_Reg_InGc" />
+		
+		<class name= "com.RegUserWith_GiftCard.tc__BundleProductForReg_InGc" />
+		
+		<class name= "com.RegUserWith_GiftCard.tc__BySearchingProduct_Reg_InGc" />
+		
+		<class name= "com.RegUserWith_GiftCard.tc__OnlyGiftCards_Reg_InGc" />
+		
+		<class name= "com.RegUserWith_GiftCard.tc__PaypalFromCheckoutPage_RegUser" />		
+		
+		<class name= "com.RegUserWith_GiftCard.tc__ProductSetForReg_InGc" />
+		
+		<class name= "com.RegUserWith_GiftCard.tc__ShippingAndBillingAddressDiffer_Reg_InGc" />
+		
+		<class name= "com.RegUserWith_GiftCard.tc__SimpleProductForReg_InGc" />
+		
+		<class name= "com.RegUserWith_GiftCard.tc__SimpleProductAndGc_Reg_InGc" />
+		
+		<class name= "com.RegUserWith_GiftCard.tc__SimpleProductsAndBundle_Gc_Reg_InGc" />
+		
+		<class name= "com.RegUserWith_GiftCard.tc__VariationProductReg_InGc" />
+		
+		<class name= "com.RegUserWith_GiftCard.tc__ProductSetForReg_InGc" />
+		
+	
+		<!-- logout  -->	
+    	
+    	<class name="com.providio.logout.tc__LogOut"/>
+	    	
+	</classes>
+   </test> 
+</suite> <!-- ProvidioTestcases -->
+
