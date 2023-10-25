@@ -322,31 +322,37 @@ public class tc__PaymentProccessByGC extends baseClass{
 	 //revieworder button  
 	    Thread.sleep(4000);
 	   List<WebElement> paidGc= driver.findElements(By.xpath("//div[contains(text(),'Your order has been paid using gift certificates.')]"));
-	    if (paidGc.size()>0) {
-			 //revieworder button  
-		    paymentpPage pp = new paymentpPage(driver);
-		    pp.clickonrevieworder(driver);
-			logger.info("clicked on the review oreder");
-			
-		  //review order page
-	        reviewOrderPage rop = new reviewOrderPage(driver);
-	        
-			Thread.sleep(2000);
-	       
+	    if (paidGc.size()>0) {	
+	    	 	logger.info("applied gift card code");
+			  //review order page
+		        reviewOrderPage rop = new reviewOrderPage(driver);	        
+				Thread.sleep(2000);	  
+				rop.clickonReviewOrder(driver);
+				logger.info("clicked on the review oreder");
 		
-			rop.clickonplaceorderwithJsExuter(driver);
-			logger.info("successfully click on the place order button");
-			Thread.sleep(5000);
-			logger.info(driver.getTitle());
-		
-			 Checkout_Validation checkout= new Checkout_Validation();
-		 //validate the final place the order page
-			 checkout.validatePlacetheOrderPage();
-		
-	     //ordernumberandOrderdate
-			 checkout.ordernumberandOrderdate();
+		  //place order 
+				rop.clickonplaceorderwithJsExuter(driver);
+				logger.info("successfully click on the place order button");
+	
+			  Thread.sleep(7000);
+			  logger.info(driver.getTitle());
+				 // Checkout validation
+	    		if(driver.getTitle().endsWith("Order Confirmation | Providio")) {
+	    			
+	    			 Checkout_Validation checkout= new Checkout_Validation();
+	    			 
+	    		 // Validate the final place the order page
+	    			 checkout.validatePlacetheOrderPage();
+	    		
+	    	     // Order number and order date
+	    			 checkout.ordernumberandOrderdate();
+	    			 Thread.sleep(5000);
+	    		}
 	   }else {
-		   test.pass("No sufficient balance in Gift certificate");
+		   test.pass("No sufficient balance in Gift certificate so continuing the payment with credit card");
+		   tc__CreditCardPaymentProcess cc = new tc__CreditCardPaymentProcess();			     
+		     cc.paymentByCreditCard();	
+		 
 	   }
 	}
 /*	

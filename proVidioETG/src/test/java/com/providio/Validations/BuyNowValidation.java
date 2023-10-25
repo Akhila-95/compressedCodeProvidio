@@ -33,6 +33,6 @@ public class BuyNowValidation extends baseClass{
 			if(priceOnBuyNowValue> 0.00) {
 				
 			}
-		
+		}	
 	}
 }

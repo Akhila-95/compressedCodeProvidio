@@ -22,8 +22,8 @@ public class tc__CreditCardPaymentProcess extends baseClass{
 	public void paymentByCreditCard() throws InterruptedException {
 		
 		List<WebElement> billingPage = driver.findElements(By.xpath("//label[contains(text(),'Billing Address')]"));		
-		
-		if(billingPage.size()>0) {
+	
+		if(billingPage.size()>0 ) {
 			
 			WebElement billingAddressDisplay = driver.findElement(By.xpath("//label[contains(text(),'Billing Address')]"));	
 			
@@ -60,10 +60,10 @@ public class tc__CreditCardPaymentProcess extends baseClass{
 				    	
 				    } else if(stripePayment.size()>0) {
 				    	
-				    	bpm.stripe();	
+				    	//bpm.stripe();	
 				    	
 				    	//wantedly calling 
-				    		 //bpm.addNewCardThoughExistingCards();
+				    		 bpm.addNewCardThoughExistingCards();
 				    	
 				    } else if(cyberSourcePayment.size()>0){
 				    	
@@ -90,24 +90,16 @@ public class tc__CreditCardPaymentProcess extends baseClass{
 				    	// Review order page
 			    		reviewOrderPage rop = new reviewOrderPage(driver);
 			    		Thread.sleep(4000);			    		
-			    		// Locate the review order button
-			    		WebElement reviewOrder= driver.findElement(By.xpath("//button[contains(text(), 'Next: Review Order')]"));	
-			    		
-			    		if(reviewOrder.isDisplayed()) {
+
 				    		rop.clickonReviewOrder(driver);
 				    		logger.info("Clicked on review order button");
+				    		test.info("Clicked on review order button");
 				    		Thread.sleep(4000);		    		
-			    		}
-			    		//locate the placeorder
-			    		 WebElement placeOrderButton= driver.findElement(By.cssSelector("button.place-order"));	    	
-			    		
-			    		if (placeOrderButton.isDisplayed()) { 		    			
-			    			 js.executeScript("window.scrollBy(0,350)", "");	    			
-			    			 Thread.sleep(2000);
+	
 				    		
 				    		 rop.clickonplaceorderwithJsExuter(driver);
 				    		 logger.info("successfully click on the place order button by normal click");
-				    		}
+				    		 test.info("Clicked on place order button");
 			    		
 			    		}
 				    
@@ -125,6 +117,8 @@ public class tc__CreditCardPaymentProcess extends baseClass{
 		    			 Thread.sleep(5000);
 		    		}	 
 				}
+		  }else {
+			  test.fail("Nex payment button is not enabled and clicked ");
 		  }
 	}
  }//method

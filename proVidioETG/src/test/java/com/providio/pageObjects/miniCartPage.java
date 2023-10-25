@@ -6,6 +6,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Wait;
+
+import com.providio.commonfunctionality.waitForTheElement;
 
 public class miniCartPage {
 
@@ -75,8 +79,8 @@ public class miniCartPage {
 
     // Method to click on the PayPal Button (Braintree Payment Integration)
     public void clickBrainTreePaypalButton(WebDriver driver) throws InterruptedException {
-    	JavascriptExecutor js = (JavascriptExecutor)driver;
-    	 // js.executeScript("arguments[0].click();", brainTreePaypalButton);
+    	 Wait<WebDriver> wait = waitForTheElement.createFluentWait(driver);
+         WebElement  brainTreePaypalButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(" //div[contains(@class,'js_braintree_paypal_cart_button')]")));
     	  brainTreePaypalButton.click();
     	  Thread.sleep(5000);
     }
@@ -86,7 +90,9 @@ public class miniCartPage {
     WebElement salesforcePaypalButton;
 
     // Method to click on the PayPal Button (Salesforce Integration)
-    public void clickSalesforcePaypalButton() {
+    public void clickSalesforcePaypalButton(WebDriver driver) {
+    	Wait<WebDriver> wait = waitForTheElement.createFluentWait(driver);
+        WebElement salesforcePaypalButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[contains(@class,'salesforce')]")));
         salesforcePaypalButton.click();
     }
 

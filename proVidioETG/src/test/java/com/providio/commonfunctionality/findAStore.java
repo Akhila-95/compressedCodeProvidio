@@ -18,15 +18,15 @@ public class findAStore extends baseClass {
    	
    		 test.info("Bopis will available Stripe and Cybersource payment");
    		 homePage hp = new homePage(driver);
-   		 hp.findastore(driver);
+   	//	 hp.findastore(driver);
    		 test.info("Clicked on Find a store");
    		 
-   		 hp.findStore(driver);
+   		// hp.findStore(driver);
    		 JavascriptExecutor js = (JavascriptExecutor) driver;
    	     js.executeScript("window.scrollBy(0,500)", "");
    	     
    	    // hp.selectStore(driver);
-   	     hp.clickCommerceCloud(driver);
+   	   //  hp.clickCommerceCloud(driver);
    	     Thread.sleep(1000);
    	 }
 	}

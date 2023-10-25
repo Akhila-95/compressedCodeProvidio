@@ -25,8 +25,6 @@ public class tc__PaypalFromCheckoutPage_GuestUser extends baseClass {
 	     //selects a random catgory and product add to cart
          navigationProccess navProccess = new navigationProccess();
          navProccess.commonNavigationProccess();
-         
-          
         
 	  // common checkoutProcess	         
 		 tc__MinicartViewCartProcess cp = new tc__MinicartViewCartProcess();         

@@ -32,7 +32,7 @@ public class allAttributesinOneFile extends baseClass{
 		 test.info("Pick up store is available for cybersource and stripe");
 		 WebElement pickUpStoreenabled =driver.findElement(By.id("delivery-options-store"));
 		 if(pickUpStoreenabled.isEnabled()) {
-			 js.executeScript("arguments[0].click();",pickUpStoreenabled);
+			// js.executeScript("arguments[0].click();",pickUpStoreenabled);
 			 test.info("Selected the pickUp in Store");
 		 }else {
 			 test.info("Pick up store is not available for this product");

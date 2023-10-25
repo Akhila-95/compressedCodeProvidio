@@ -5,6 +5,7 @@ import org.testng.annotations.Test;
 
 import com.providio.Scenarios.Bundle_GcAndAllPromotions;
 import com.providio.Scenarios.SearchingProduct;
+import com.providio.Scenarios.SimpleProductAndGc;
 import com.providio.commonfunctionality.findAStore;
 import com.providio.paymentProccess.tc__CreditCardPaymentProcess;
 import com.providio.paymentProccess.tc__MiniCartCheckoutButton;
@@ -25,6 +26,11 @@ public class tc__Bundle_GcAndAllPromotions_Reg_InCC extends baseClass{
 			Bundle_GcAndAllPromotions bgs = new Bundle_GcAndAllPromotions();
 			bgs.bundleGcandallpromotions();
 		
+			//simple proudct
+			SimpleProductAndGc spGc = new SimpleProductAndGc();
+			spGc.simpleProductAndGc();
+			 	
+			
 		//searching a product 		
 			 SearchingProduct sp = new SearchingProduct();
 			 sp.searchingProduct();	

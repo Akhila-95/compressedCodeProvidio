@@ -151,6 +151,7 @@ public class checkOutPage {
     public void clickpaymentbutton(WebDriver driver) throws InterruptedException {
     	if(paymentbutton.isDisplayed()) {
 	        JavascriptExecutor js = (JavascriptExecutor) driver;
+	        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", paymentbutton);
 	        js.executeScript("arguments[0].click();", paymentbutton);
 	        Thread.sleep(5000);
     	}if(paymentbutton.isDisplayed()) {

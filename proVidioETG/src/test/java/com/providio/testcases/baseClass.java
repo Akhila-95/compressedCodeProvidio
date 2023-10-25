@@ -260,7 +260,7 @@ public class baseClass {
 			if (!isBrowserRunning()) {
 				
 				 String[] suiteFiles = {
-				            "C:\\Users\\user\\git\\RegcombinedScript\\proVidioETG\\GuestUser.xml","C:\\Users\\user\\git\\RegcombinedScript\\proVidioETG\\RegisteredUser.xml",
+				            "C:\\Users\\user\\git\\compressedCode\\proVidioETG\\GuestUser.xml","C:\\Users\\user\\git\\compressedCode\\proVidioETG\\RegUser.xml"
 
 				            // Add more suite file paths if needed
 				        };

@@ -483,8 +483,7 @@ WebDriver lDriver;
         js.executeScript("arguments[0].click();", paypalCheckout);
        
         Thread.sleep(3000);
-       // paypalCheckout.click();
-       // Thread.sleep(10000);
+      
         List<WebElement> salesforcePaypalCheckout=parentDiv.findElements(By.xpath("//div[contains(@class,'paypal-buttons-context-iframe paypal-buttons-label-paypal')]"));  
         if(salesforcePaypalCheckout.size()>0) {
             WebElement salesforcePaypalCheckout1=parentDiv.findElement(By.xpath("(//iframe[@title='PayPal'])[2]"));

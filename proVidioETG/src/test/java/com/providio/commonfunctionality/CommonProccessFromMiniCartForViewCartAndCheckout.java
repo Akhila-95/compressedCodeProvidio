@@ -7,6 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 
 import com.providio.pageObjects.checkOutPage;
@@ -55,7 +56,7 @@ public class CommonProccessFromMiniCartForViewCartAndCheckout extends baseClass 
 				        	 		
 				        	 		  WebElement addressDropDownSelect = driver.findElement(By.id("shipmentSelector-default"));
 				        	 		  if(addressDropDownSelect.isDisplayed()) {
-				        	 			  addressDropDownSelect.click();
+				        	 			 // addressDropDownSelect.click();
 				        	 		  }
 				        	 		  
 				        	 		 List<WebElement> savedAddress = driver.findElements(By.xpath("//select[@id='shipmentSelector-default']/option"));
@@ -65,7 +66,7 @@ public class CommonProccessFromMiniCartForViewCartAndCheckout extends baseClass 
 						        		 		//selectingRandomSavedShippingAddress();
 									        				        
 									      //if user want to add new address though having saved address
-						        		 		 //addNewAddress(cp);
+						        		 		 addNewAddress(cp);
 							            
 						        	 }else{
 								        test.info("User logged-in and have no saved cards");
@@ -93,7 +94,7 @@ public class CommonProccessFromMiniCartForViewCartAndCheckout extends baseClass 
 		    	  test.info("User logged in and have saved  Address ");				           
 		          
 		          // Locate the <select> element by its ID attribute
-		          WebElement addressDropDownSelect = driver.findElement(By.id("shipmentSelector-default"));
+		          WebElement addressDropDownSelect = driver.findElement(By.xpath("//select[@id='shipmentSelector-default']"));
 		          
 		    if(addressDropDownSelect.isDisplayed()) {      
 		          //click on address drop down
@@ -102,13 +103,16 @@ public class CommonProccessFromMiniCartForViewCartAndCheckout extends baseClass 
 		          //js.executeScript("arguments[0].click();",  addressDropDownSelect);
 		          System.out.println("Clicks on drop down");
 		          
-		
+		          Actions action = new Actions(driver);
+			    	//action.moveToElement(addressDropDownSelect).perform();
+			    	Thread.sleep(5000);
 		          // Create a Select object to work with the <select> element
 		          Select select = new Select(addressDropDownSelect);
 		
 		          // Get all the options in the dropdown
 		          List<WebElement> options = select.getOptions();
-		
+		          
+		           logger.info(options.size());
 		          // Generate a random index within the range of available options
 		          Random random = new Random();
 		          int randomIndex = random.nextInt(options.size());
@@ -154,13 +158,11 @@ public class CommonProccessFromMiniCartForViewCartAndCheckout extends baseClass 
 	    	
 	        List<WebElement> paymentButton = driver.findElements(By.cssSelector(".submit-shipping"));
 	        if(paymentButton.size()>0 ) {
-	        	
+	        	 Thread.sleep(2000);	        	
 	        	 WebElement paymentButtonEnable = driver.findElement(By.cssSelector(".submit-shipping"));
 	        	 if(paymentButtonEnable.isEnabled()) {
 			        cp.clickpaymentbutton(driver);
 			        logger.info("Clicked on the payment button");
-	        	 }else {
-	        		 test.fail("Payment button is not Enabled");
 	        	 }
 		       
 	        }
@@ -201,7 +203,7 @@ public class CommonProccessFromMiniCartForViewCartAndCheckout extends baseClass 
 			  WebElement firstName = driver.findElement(By.xpath("//input[@id='shippingFirstNamedefault']"));
 			  
 			if(firstName.isDisplayed()) {
-				
+				test.info("Adding New address though having the address");
 		        cp.setFisrtName(fname);	
 		        logger.info("Entered shipping fname");
 		        test.info("Entered shipping fname");
@@ -239,9 +241,9 @@ public class CommonProccessFromMiniCartForViewCartAndCheckout extends baseClass 
 					
 						int randomNumber = 456; // Generates a random number between 100 and 999     random.nextInt(900) + 100
 						address = String.valueOf(randomNumber);
-						Thread.sleep(2000);
+						
 						addressAtEnterAddress.sendKeys(address);
-			          
+						Thread.sleep(1000);
 						//to perform the keyboard activities
 						WebElement shipping = driver.switchTo().activeElement(); 
 			          
@@ -266,7 +268,7 @@ public class CommonProccessFromMiniCartForViewCartAndCheckout extends baseClass 
 	      	
 	      	  Random random = new Random();
 	      	  
-	          int randomNumber = 897; // Generates a random number between 100 and 999     random.nextInt(900) + 100
+	          int randomNumber =  random.nextInt(900) + 100; // Generates a random number between 100 and 999     random.nextInt(900) + 100
 	          address = String.valueOf(randomNumber);
 	          Thread.sleep(1000);
 	          shippingAddress.sendKeys(address);

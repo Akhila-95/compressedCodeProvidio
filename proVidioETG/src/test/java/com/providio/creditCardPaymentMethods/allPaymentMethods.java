@@ -48,6 +48,7 @@ public class allPaymentMethods extends baseClass {
         }else {
         	//if user is registered and have saved cards then  this if will execute
         	if(savedCardsBrainTree.size()>0) {
+        		
         		pm.savedCardsBrainTree();
         	}else {
         		//new user without saved cards in account 
@@ -119,6 +120,7 @@ public class allPaymentMethods extends baseClass {
 		
 	}
 	public void addNewCardThoughExistingCards() throws InterruptedException {
+		test.info("Adding new card to account though having the saved card.");
 		if(addNewCardListStripe.size()>0) {
 			//adding new card though user have saved cards
 			pm.addNewCardThoughExistingCardsInStripe();

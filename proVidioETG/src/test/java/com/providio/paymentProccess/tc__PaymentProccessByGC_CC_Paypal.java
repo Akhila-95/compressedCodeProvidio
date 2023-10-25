@@ -83,9 +83,7 @@ public class tc__PaymentProccessByGC_CC_Paypal extends baseClass{
 	        int operations = 0;
 	      	 Iterator<String> iterator = dataList.iterator();
 	      	 
-	        while (iterator.hasNext()) {
-
-                
+	        while (iterator.hasNext()) {  
 	            String value = iterator.next();
 	            JavascriptExecutor js = (JavascriptExecutor) driver;
 	            WebElement giftCertificate = driver.findElement(By.id("giftCert"));
@@ -176,5 +174,8 @@ public class tc__PaymentProccessByGC_CC_Paypal extends baseClass{
 	    } catch (IOException e) {
 	        e.printStackTrace();
 	    }
+	    
+	   
 	}
+	
 }

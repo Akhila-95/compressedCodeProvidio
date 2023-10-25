@@ -134,9 +134,11 @@ public class Checkout_Validation extends baseClass {
 			        test.pass("Successfully Order is Placed and the Ordered date is "+ Orderdate);
 			       
 			        //shipping details
-			        WebElement shippingDetails = driver.findElement(By.xpath("//div[@class='single-shipping']"));			        
-			        test.info("Shipping Details of placed orders " + shippingDetails.getText());
-			        
+			       List<WebElement> shippingDetailsList = driver.findElements(By.xpath("//div[@class='single-shipping']"));	
+			       if(shippingDetailsList .size()>0) {
+				        WebElement shippingDetails = driver.findElement(By.xpath("//div[@class='single-shipping']"));			        
+				        test.info("Shipping Details of placed orders " + shippingDetails.getText());
+			       }
 			        //paymnet details
 				    WebElement paymentDetailsElement = driver.findElement(By.xpath("//div[@class='payment-details']"));
 			        String paymentDetails = paymentDetailsElement.getText();

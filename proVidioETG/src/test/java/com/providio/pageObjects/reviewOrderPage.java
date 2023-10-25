@@ -18,29 +18,30 @@ WebDriver lDriver;
 		lDriver=rDriver;
 		PageFactory.initElements(rDriver, this);
 	}
+
 	
 	@FindBy(xpath ="//button[contains(text(), 'Next: Review Order')]")
 	WebElement reviewOrderPage;
     public void clickonReviewOrder(WebDriver driver) throws InterruptedException {	 
-    	
+   
     	JavascriptExecutor js = (JavascriptExecutor) driver;     
     	// Brain Tree
 		List<WebElement> creditcardscheck = driver.findElements(By.xpath("//a[@class ='nav-link creditcard-tab active']"));
 	    if(creditcardscheck.size()>0) {
 	    		Thread.sleep(3000);
 		    	if(reviewOrderPage.isDisplayed()) {
-		    		// js.executeScript("window.scrollBy(0,100)", "");
-		    		 js.executeScript("arguments[0].click();",reviewOrderPage);
+		    		 js.executeScript("window.scrollBy(0,100)", "");
+		    		// js.executeScript("arguments[0].click();",reviewOrderPage);
 		    		 Thread.sleep(1000);
 		    		 reviewOrderPage.click();
 		    	}
 	    	}
-	  if(reviewOrderPage.isDisplayed()) {
+	  if((reviewOrderPage.isDisplayed() )&& !(creditcardscheck.size()>0)) {
 	    	js.executeScript("arguments[0].click();",reviewOrderPage);
 	    	Thread.sleep(3000);
 	  }
     }
-    
+  
     
     //In checkout page if the it will check the button of revieworder and place order buttons
 	@FindBy(xpath ="//button[contains(@class,' place-order')]")
@@ -50,16 +51,24 @@ WebDriver lDriver;
 	List<WebElement> placetheorderList;
 	
     public void clickonplaceorderwithJsExuter(WebDriver driver) throws InterruptedException {
-    	Thread.sleep(2000);
-    	JavascriptExecutor js = (JavascriptExecutor) driver;    
-    	js.executeScript("window.scrollBy(0,100)", "");
-    	
+    	Thread.sleep(3000);
+    	JavascriptExecutor js = (JavascriptExecutor) driver; 
+    	List<WebElement> creditcardscheck = driver.findElements(By.xpath("//a[@class ='nav-link creditcard-tab active']"));
     	if(placetheorderList.size()>0) {
-	    	 if(placetheorderwithJsExuter.isDisplayed() && placetheorderwithJsExuter.isEnabled() ) {  	    		 		
+	    	 Thread.sleep(2000);
+	    	 if(creditcardscheck.size()>0 ) {  
+	    			js.executeScript("window.scrollBy(0,100)", "");
+	    		 //placetheorderwithJsExuter.click();
+	    		 js.executeScript("arguments[0].click();", placetheorderwithJsExuter);
+		    		Thread.sleep(4000);	    			    		
+	    	 }else if(!(creditcardscheck.size()>0)) {  
+	    			js.executeScript("window.scrollBy(0,100)", "");
+	    			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", placetheorderwithJsExuter);
 	    		 js.executeScript("arguments[0].click();", placetheorderwithJsExuter);
 		    		Thread.sleep(4000);	    			    		
 	    	 }
+	    	 
     	}
     } 
- 
+	
 }

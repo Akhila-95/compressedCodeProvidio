@@ -51,17 +51,26 @@ public class paymentMethods extends baseClass{
 		public void savedCardsBrainTree() throws InterruptedException {
 			//clicks on drop down
 			WebElement savedCardsBrainTree= driver.findElement(By.cssSelector("option.js_stored_card"));
-			js.executeScript("arguments[0].click();", savedCardsBrainTree);	
-			
-				WebElement savedCardsDropDown= driver.findElement(By.id("braintreeCreditCardList"));
-				//js.executeScript("arguments[0].click();", savedCardsDropDown);	
+		
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+
+	       
+			WebElement savedCardsDropDown= driver.findElement(By.id("braintreeCreditCardList"));
+			// savedCardsDropDown.click();
 			
 			//randomizing the saved cards
 			List<WebElement> countOfSavedCardsInBrainTree= driver.findElements(By.cssSelector("option.js_stored_card"));
+			
 			if (!countOfSavedCardsInBrainTree.isEmpty()) {
 				test.info("User have saved cards");
-    		 // Generate a random index within the bounds of the list size
-				Select select = new Select(savedCardsDropDown);
+				
+				/* 	Actions action = new Actions(driver);
+		    	action.moveToElement(savedCardsDropDown).perform();
+		    	Thread.sleep(5000);
+		    	WebElement savedCardsInBrainTree= driver.findElement(By.cssSelector("option.js_stored_card"));
+		    	savedCardsInBrainTree.click();
+    		// Generate a random index within the bounds of the list size
+				Select select = new Select(savedCardsBrainTree);
 
 		     // Get all the options in the dropdown
 		        List<WebElement> options = select.getOptions();
@@ -75,7 +84,7 @@ public class paymentMethods extends baseClass{
     		    Thread.sleep(1000);
     		    //js.executeScript("arguments[0].click();", countOfSavedCardsInBrainTree.get(randomIndex));	
     		    countOfSavedCardsInBrainTree.get(randomIndex).click();	 		   
-    		    System.out.println("Selected random card");	
+    		    System.out.println("Selected random card");	*/
     		    
 		    	}else {
 		    		test.info("No used cards for user");
@@ -117,6 +126,8 @@ public class paymentMethods extends baseClass{
 	        logger.info("entered scecode");
 	        test.info("entered scecode");
 			
+	        
+	        
 		}
 		
 		//payment reg user

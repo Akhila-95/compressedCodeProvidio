@@ -17,7 +17,7 @@ public class ProductSet extends baseClass{
 		
 		
 		//selecting size for product
-		allAttributesinOneFile.allAttributes();
+		allAttributesinOneFile.selectTheAttributesInPdp(driver);
 
 		
 		//validating the product is instock and adding to the cart
