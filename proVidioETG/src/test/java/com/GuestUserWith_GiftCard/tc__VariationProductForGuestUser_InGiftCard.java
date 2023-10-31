@@ -39,9 +39,7 @@ public class tc__VariationProductForGuestUser_InGiftCard extends baseClass{
 				 VariationProduct product = new VariationProduct();
 				 product.variationProduct();
 				 
-	      //paypal checkout form view cart page
-		 	    tc__CheckOutProcessByPayPal paypal= new tc__CheckOutProcessByPayPal();	         
-		 	    paypal.checkoutprocessFromViewCart();
+	      
     
 	     //checkoutProcess	        
 				tc__MinicartViewCartProcess cp = new tc__MinicartViewCartProcess();         

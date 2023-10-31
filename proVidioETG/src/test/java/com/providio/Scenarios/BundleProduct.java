@@ -18,8 +18,8 @@ public class BundleProduct extends baseClass{
 			//Selecting the attributes
 		    allAttributesinOneFile.selectTheAttributesInPdp(driver);
     	
-    	//validating the product is add to the cart
-    	addtoCartValidation.validatingProductisAddtoCart(driver);
+	    	//validating the product is add to the cart
+	    	addtoCartValidation.validatingProductisAddtoCart(driver);
 	
 	}
 

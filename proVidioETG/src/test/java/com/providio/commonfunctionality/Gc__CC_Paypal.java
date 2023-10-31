@@ -142,7 +142,7 @@ public class Gc__CC_Paypal extends baseClass{
 						 }else {
 							 //if no sufficient balance  in Gc then this executes 
 							 test.info("No GC code is redemeed ");
-							 test.pass("No GC code is redemeed because of insufficient balnce or Gc belongs to different customer    So Doing payment with credit card");
+							 test.pass("No GC code is redemeed because of insufficient balnce or Gc belongs to different customer So Doing payment with credit card");
 							 Thread.sleep(2000);	 
 							 tc__CreditCardPaymentProcess cc = new tc__CreditCardPaymentProcess();			     
 							     cc.paymentByCreditCard();	
@@ -181,7 +181,7 @@ public class Gc__CC_Paypal extends baseClass{
 			 //checking whether gift certificate div is available or not
 			 List<WebElement> giftCertificateDiv= driver.findElements(By.cssSelector(".payment-form-fields"));
 			 List<WebElement> redeemGiftCertificate= driver.findElements(By.xpath("//label[contains(text(),'Redeem gift certificate')]"));
-			 //Thread.sleep(3000);
+		
 	        if(giftCertificateDiv.size()>0 &&  redeemGiftCertificate.size()>0) {   
 	        	test.info("Gift certificate div is displaying in payment page");	
 	        
@@ -272,7 +272,9 @@ public class Gc__CC_Paypal extends baseClass{
 									cpp.checkoutprocessFromCheckout();
 							 }else {
 									 test.info("No GC code is redemeed");
-									 test.pass("No GC code is redemeed because of insufficient balnce or Gc beloAngs to different customer");				 
+									 test.pass("No GC code is redemeed because of insufficient balnce or Gc beloAngs to different customer So Using paypal ");	
+									 tc__CheckOutProcessByPayPal cpp = new tc__CheckOutProcessByPayPal();
+									cpp.checkoutprocessFromCheckout();
 							 }
 						 }
 				

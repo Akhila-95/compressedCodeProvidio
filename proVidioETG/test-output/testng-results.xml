@@ -1,43 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="2" total="4" passed="1" failed="1" skipped="0">
+<testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-25T13:53:47 IST" name="Default suite" finished-at="2023-10-25T13:55:50 IST" duration-ms="122811">
+  <suite started-at="2023-10-31T10:54:53 IST" name="Default suite" finished-at="2023-10-31T10:56:49 IST" duration-ms="115966">
     <groups>
     </groups>
-    <test started-at="2023-10-25T13:53:47 IST" name="Default test" finished-at="2023-10-25T13:55:50 IST" duration-ms="122811">
-      <class name="com.RegUserWith_CreditCard.tc__BundleProductRegUser_InCC">
-        <test-method is-config="true" signature="setUpforReport()[pri:0, instance:com.RegUserWith_CreditCard.tc__BundleProductRegUser_InCC@59939293]" started-at="2023-10-25T13:53:43 IST" name="setUpforReport" finished-at="2023-10-25T13:53:47 IST" duration-ms="4077" status="PASS">
+    <test started-at="2023-10-31T10:54:53 IST" name="Default test" finished-at="2023-10-31T10:56:49 IST" duration-ms="115966">
+      <class name="com.GuestUserWith_Checkout_Paypal.tc__BySearchingProduct_GuestUser_InCheckoutPaypal">
+        <test-method is-config="true" signature="setUpforReport()[pri:0, instance:com.GuestUserWith_Checkout_Paypal.tc__BySearchingProduct_GuestUser_InCheckoutPaypal@388d14e]" started-at="2023-10-31T10:54:50 IST" name="setUpforReport" finished-at="2023-10-31T10:54:53 IST" duration-ms="3063" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpforReport -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.RegUserWith_CreditCard.tc__BundleProductRegUser_InCC@59939293]" started-at="2023-10-25T13:54:39 IST" name="setUp" finished-at="2023-10-25T13:54:41 IST" duration-ms="2030" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.GuestUserWith_Checkout_Paypal.tc__BySearchingProduct_GuestUser_InCheckoutPaypal@388d14e]" started-at="2023-10-31T10:54:53 IST" name="setUp" finished-at="2023-10-31T10:54:56 IST" duration-ms="2058" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="bundleProduct()[pri:0, instance:com.RegUserWith_CreditCard.tc__BundleProductRegUser_InCC@59939293]" started-at="2023-10-25T13:54:41 IST" name="bundleProduct" finished-at="2023-10-25T13:55:38 IST" depends-on-methods="com.providio.login.tc__Login.loginTest" duration-ms="57508" status="FAIL">
-          <exception class="org.openqa.selenium.InvalidElementStateException">
+        <test-method signature="bySearchingProduct()[pri:0, instance:com.GuestUserWith_Checkout_Paypal.tc__BySearchingProduct_GuestUser_InCheckoutPaypal@388d14e]" started-at="2023-10-31T10:54:56 IST" name="bySearchingProduct" finished-at="2023-10-31T10:56:36 IST" duration-ms="100453" status="FAIL">
+          <exception class="org.openqa.selenium.ElementNotInteractableException">
             <message>
-              <![CDATA[invalid element state: Element is not currently interactable and may not be manipulated
-  (Session info: chrome=118.0.5993.89)
+              <![CDATA[element not interactable
+  (Session info: chrome=118.0.5993.118)
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [25e0d4a2747c85df092446ea2507219a, clearElement {id=9D47B3C9125875E25C41ACC793EA3049_element_206}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.89, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\user\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56199}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56199/devtoo..., se:cdpVersion: 118.0.5993.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (25e0d4a2747c85df092446ea2507219a)] -> xpath: //input[@id='shippingFirstNamedefault']]
-Session ID: 25e0d4a2747c85df092446ea2507219a]]>
+Command: [f453abbe92658feb0ee2250fd97a471b, sendKeysToElement {id=8B653BB7304E5FBADFA3C93050586412_element_179, value=[Ljava.lang.CharSequence;@428c216e}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.118, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\user\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51262}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51262/devtoo..., se:cdpVersion: 118.0.5993.118, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (f453abbe92658feb0ee2250fd97a471b)] -> xpath: //input[@id='password']]
+Session ID: f453abbe92658feb0ee2250fd97a471b]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.InvalidElementStateException: invalid element state: Element is not currently interactable and may not be manipulated
-  (Session info: chrome=118.0.5993.89)
+              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=118.0.5993.118)
 Build info: version: '4.11.0', revision: '040bc5406b'
 System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.2'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [25e0d4a2747c85df092446ea2507219a, clearElement {id=9D47B3C9125875E25C41ACC793EA3049_element_206}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.89, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\user\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56199}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56199/devtoo..., se:cdpVersion: 118.0.5993.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (25e0d4a2747c85df092446ea2507219a)] -> xpath: //input[@id='shippingFirstNamedefault']]
-Session ID: 25e0d4a2747c85df092446ea2507219a
+Command: [f453abbe92658feb0ee2250fd97a471b, sendKeysToElement {id=8B653BB7304E5FBADFA3C93050586412_element_179, value=[Ljava.lang.CharSequence;@428c216e}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.118, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\user\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51262}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51262/devtoo..., se:cdpVersion: 118.0.5993.118, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (f453abbe92658feb0ee2250fd97a471b)] -> xpath: //input[@id='password']]
+Session ID: f453abbe92658feb0ee2250fd97a471b
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -51,20 +51,10 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(Driver
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:518)
 at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:224)
-at org.openqa.selenium.remote.RemoteWebElement.clear(RemoteWebElement.java:130)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-at jdk.proxy2/jdk.proxy2.$Proxy19.clear(Unknown Source)
-at com.providio.pageObjects.checkOutPage.setFisrtName(checkOutPage.java:54)
-at com.providio.commonfunctionality.CommonProccessFromMiniCartForViewCartAndCheckout.shippingAddressDetailsWithName(CommonProccessFromMiniCartForViewCartAndCheckout.java:207)
-at com.providio.commonfunctionality.CommonProccessFromMiniCartForViewCartAndCheckout.addNewAddress(CommonProccessFromMiniCartForViewCartAndCheckout.java:342)
-at com.providio.commonfunctionality.CommonProccessFromMiniCartForViewCartAndCheckout.selectShippingAddress(CommonProccessFromMiniCartForViewCartAndCheckout.java:69)
-at com.providio.commonfunctionality.AddressDetails.address(AddressDetails.java:38)
-at com.providio.paymentProccess.tc__MinicartViewCartProcess.checkoutprocess(tc__MinicartViewCartProcess.java:89)
-at com.RegUserWith_CreditCard.tc__BundleProductRegUser_InCC.bundleProduct(tc__BundleProductRegUser_InCC.java:35)
+at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:111)
+at com.providio.pageObjects.paymentpPage.paypalPopup(paymentpPage.java:604)
+at com.providio.paymentProccess.tc__CheckOutProcessByPayPal.checkoutprocessFromCheckout(tc__CheckOutProcessByPayPal.java:217)
+at com.GuestUserWith_Checkout_Paypal.tc__BySearchingProduct_GuestUser_InCheckoutPaypal.bySearchingProduct(tc__BySearchingProduct_GuestUser_InCheckoutPaypal.java:42)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -95,47 +85,26 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.InvalidElementStateException -->
+          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- bundleProduct -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.RegUserWith_CreditCard.tc__BundleProductRegUser_InCC@59939293]" started-at="2023-10-25T13:55:38 IST" name="afterMethod" finished-at="2023-10-25T13:55:50 IST" duration-ms="11578" status="PASS">
+        </test-method> <!-- bySearchingProduct -->
+        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.GuestUserWith_Checkout_Paypal.tc__BySearchingProduct_GuestUser_InCheckoutPaypal@388d14e]" started-at="2023-10-31T10:56:36 IST" name="afterMethod" finished-at="2023-10-31T10:56:49 IST" duration-ms="13405" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=bundleProduct status=FAILURE method=tc__BundleProductRegUser_InCC.bundleProduct()[pri:0, instance:com.RegUserWith_CreditCard.tc__BundleProductRegUser_InCC@59939293] output={null}]]]>
+                <![CDATA[[TestResult name=bySearchingProduct status=FAILURE method=tc__BySearchingProduct_GuestUser_InCheckoutPaypal.bySearchingProduct()[pri:0, instance:com.GuestUserWith_Checkout_Paypal.tc__BySearchingProduct_GuestUser_InCheckoutPaypal@388d14e] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.RegUserWith_CreditCard.tc__BundleProductRegUser_InCC@59939293]" started-at="2023-10-25T13:55:50 IST" name="tearDown" finished-at="2023-10-25T13:56:01 IST" duration-ms="10949" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.GuestUserWith_Checkout_Paypal.tc__BySearchingProduct_GuestUser_InCheckoutPaypal@388d14e]" started-at="2023-10-31T10:56:49 IST" name="tearDown" finished-at="2023-10-31T10:57:00 IST" duration-ms="10968" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.RegUserWith_CreditCard.tc__BundleProductRegUser_InCC -->
-      <class name="com.providio.login.tc__Login">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.providio.login.tc__Login@69e36fe3]" started-at="2023-10-25T13:53:47 IST" name="setUp" finished-at="2023-10-25T13:53:49 IST" duration-ms="2081" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="loginTest()[pri:0, instance:com.providio.login.tc__Login@69e36fe3]" started-at="2023-10-25T13:53:49 IST" name="loginTest" finished-at="2023-10-25T13:54:39 IST" duration-ms="49532" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginTest -->
-        <test-method is-config="true" signature="afterMethod(org.testng.ITestResult)[pri:0, instance:com.providio.login.tc__Login@69e36fe3]" started-at="2023-10-25T13:54:39 IST" name="afterMethod" finished-at="2023-10-25T13:54:39 IST" duration-ms="20" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[[TestResult name=loginTest status=SUCCESS method=tc__Login.loginTest()[pri:0, instance:com.providio.login.tc__Login@69e36fe3] output={null}]]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-      </class> <!-- com.providio.login.tc__Login -->
+      </class> <!-- com.GuestUserWith_Checkout_Paypal.tc__BySearchingProduct_GuestUser_InCheckoutPaypal -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

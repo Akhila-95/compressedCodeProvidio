@@ -154,9 +154,9 @@ public class checkOutPage {
 	        ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", paymentbutton);
 	        js.executeScript("arguments[0].click();", paymentbutton);
 	        Thread.sleep(5000);
-    	}if(paymentbutton.isDisplayed()) {
+    	}/*if(paymentbutton.isDisplayed()) {
     		paymentbutton.click();
-    	}
+    	}*/
     }
     
     //add to my address when register user is check out

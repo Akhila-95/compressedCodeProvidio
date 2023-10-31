@@ -38,12 +38,13 @@ public class allPaymentMethods extends baseClass {
 	
 	//BrainTree
 	public void BrainTreeMethod() throws InterruptedException {
-		
-		
-		
+
+        
 		if(continueasAGuest.size()>0) {
+			
  		   //guest user payment
 			pm.braintreeGuest();
+			
 
         }else {
         	//if user is registered and have saved cards then  this if will execute

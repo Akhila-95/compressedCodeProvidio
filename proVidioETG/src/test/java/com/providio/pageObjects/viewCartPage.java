@@ -6,11 +6,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class viewCartPage {
+import com.providio.testcases.baseClass;
+
+public class viewCartPage extends baseClass {
 	
 WebDriver lDriver;
 	
@@ -49,7 +50,7 @@ WebDriver lDriver;
 		    // Perform the click action
 		    payPalButton.click();
 		}
-//salesforce paypalbutton
+		//salesforce paypalbutton
 		public void salesforcePayPalButton(WebDriver driver) {
 				
 			    // Find the element using its xpath
@@ -59,25 +60,49 @@ WebDriver lDriver;
 			    payPalButton.click();
 			}
 	
-	
-
-	/*public void clickPayPalButton(WebDriver driver) throws InterruptedException {
-	    // Locate the parent div containing the PayPal button
-	    WebElement parentPaypal = driver.findElement(By.xpath("//div[@class='paypal-button paypal-button-number-0 paypal-button-layout-horizontal paypal-button-shape-rect paypal-button-number-single paypal-button-env-sandbox paypal-button-color-gold paypal-button-text-color-black paypal-logo-color-blue']"));
-
-	    // Find the child div with class 'paypal-button-label-container'
-	    WebElement payPalButton = parentPaypal.findElement(By.xpath(".//div[@class='paypal-button-label-container']"));
-
-	    // Click the PayPal button using JavaScript
-	    JavascriptExecutor js = (JavascriptExecutor) driver;
-	    js.executeScript("arguments[0].click();", payPalButton);
-
-	    // Wait for a short while (adjust the time if needed)
-	    Thread.sleep(5000);
-	}*/
-
-
-	
-		 
-
+		//IF only GC in cart, it should not show the shipping method.
+		public void noShippingMethodForOnlyGiftCertificate(WebDriver driver) {
+			
+			  List<WebElement> giftcertificate = driver.findElements(By.xpath("//div[contains(@class,'card product-info gift-certificate uuid-')]"));
+			  List<WebElement> normalProducts = driver.findElements(By.xpath("//div[contains(@class,'card product-info  uuid-')]"));
+			  
+			  //if GC and normal products in cart  
+			  if((giftcertificate.size()> 0)&& (normalProducts.size()>0)) {			  
+				  List<WebElement> shippingMethodLabelList = driver.findElements(By.xpath("//label[contains(text(),'Shipping')]"));
+				  
+				  //if shipping method label is find
+				  if(shippingMethodLabelList.size()>0) {
+					  WebElement shippingMethodLabel = driver.findElement(By.xpath("//label[contains(text(),'Shipping')]"));
+					  test.info("Verifying -  So, shipping method should display");	
+					  //if shipping method is displayed 
+					  if(shippingMethodLabel.isDisplayed()) {					  						  
+						  test.pass("Verified shipping method is displayed when Gift certificate and normal products is in cart ");
+						  logger.info("Gift certificate and normal products  is in cart So, shipping method should display");
+					  }else {
+						  test.fail(" Shipping method is not  displayed when Gift certificate and normal products is in cart ");
+					  }
+				  }
+				  //if only normal products in cart
+			  }else if(normalProducts.size()>0) {
+				  WebElement shippingMethodLabel = driver.findElement(By.xpath("//label[contains(text(),'Shipping')]"));
+				  //if shipping method is displayed 
+				  test.info( "Verifying Normal products  is in cart So, shipping method should display");	
+				  if(shippingMethodLabel.isDisplayed()) {					  					 
+					  test.pass("Verified shipping method is displayed when Gift certificate and normal products is in cart ");
+					  logger.info("Normal products  is in cart So, shipping method should display");	
+				  }else {
+					  test.fail(" Shipping method is not  displayed when Gift certificate and normal products is in cart ");
+				  }
+				  
+			  }else if(giftcertificate.size()>0) {
+				  test.info( "Verifying -Only Gift certificate is in cart So, shipping method should not display");
+				  if(!(driver.findElements(By.xpath("//label[contains(text(),'Shipping')]")).size()>0)) {					  
+					  logger.info("Only Gift certificate  is in cart So, shipping method should not display");	
+					  test.pass("Verified -Only Gift certificate is in cart So, shipping method should not displayed");
+				  }else {
+					  test.fail("Verified -Only Gift certificate is in cart So, shipping method is displaying");
+				  }
+			  }
+			
+		}
 }

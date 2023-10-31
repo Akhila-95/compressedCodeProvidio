@@ -260,7 +260,8 @@ public navigationPage(WebDriver rDriver ){
 		@FindBy(xpath="//a[@id='electronics-gps-units']")
 		WebElement electronicsGpsUnits;
 		public void ClickelectronicsofGpsUnits(){
-			electronicsGpsUnits.click();
+			JavascriptExecutor js = (JavascriptExecutor) driver; 
+			js.executeScript("arguments[0].click();",  electronicsGpsUnits);
 		}
 		//gaming
 		@FindBy(xpath="//a[@id='electronics-gaming']")

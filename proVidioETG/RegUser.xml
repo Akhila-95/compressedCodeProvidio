@@ -18,9 +18,7 @@
   
 		<class name= "com.RegUserWith_CreditCard.tc__BundleProductRegUser_InCC" />
 		
-		<class name= "com.RegUserWith_CreditCard.tc__Bundle_GcAndAllPromotions_Reg_InCC" />
-		
-		<class name= "com.RegUserWith_CreditCard.tc__By_BuyNow_Button" /> 
+		<class name= "com.RegUserWith_CreditCard.tc__Bundle_GcAndAllPromotions_Reg_InCC" />	
 		
 		<class name= "com.RegUserWith_CreditCard.tc__PdpPage_Reg_InCC" />
 		
@@ -28,7 +26,7 @@
 		
 		<class name= "com.RegUserWith_CreditCard.tc__OnlyGiftCards_Reg_InCC" />		
 		
-	
+	    <class name= "com.RegUserWith_CreditCard.tc__By_BuyNow_PopUp" />
 				
 		<class name= "com.RegUserWith_CreditCard.tc__simpleProductAndGc_InCC" />
 		
@@ -41,7 +39,7 @@
 		<class name= "com.RegUserWith_CreditCard.tc__ProductSetReg_InCC" />
 		
 
-	<!-- Gc and CC -->
+	<!-- Gc and CC-->
 		
 	
 		
@@ -74,7 +72,7 @@
 	
 		
 		
-	<!--Gift cetificate 	  -->	
+	<!--Gift cetificate -->
 		
 		<class name= "com.RegUserWith_GiftCard.tc__Bundle_GcAndAllPromotions_Reg_InGc" />
 		
@@ -98,10 +96,64 @@
 		
 		<class name= "com.RegUserWith_GiftCard.tc__ProductSetForReg_InGc" />
 		
+				
+				<!--  Gc and Paypal --> 
 		
 		
-	
-  <!--  logout-->      
+		<class name= "com.RegUserWith_GcAndPaypal.tc__Bundle_GcAndAllPromotions_Reg_InGcAndPaypal" />
+		<class name= "com.RegUserWith_GcAndPaypal.tc__BundleProductForReg_InGcAndPaypal" />
+		<class name= "com.RegUserWith_GcAndPaypal.tc__BySearchingProduct_Reg_InGcAndPaypal" />
+		<class name= "com.RegUserWith_GcAndPaypal.tc__OnlyGiftCards_Reg_InGcAndPaypal" />
+		<class name= "com.RegUserWith_GcAndPaypal.tc__PaypalFromCheckoutPage_Reg_InGcAndPaypal" />		
+		<class name= "com.RegUserWith_GcAndPaypal.tc__ProductSetForReg_InGcAndPaypal" />
+		
+		<class name= "com.RegUserWith_GcAndPaypal.tc__SimpleProductAndGc_Reg_InGcAndPaypal" />
+		<class name= "com.RegUserWith_GcAndPaypal.tc__SimpleProductForReg_InGcAndPaypal" />
+		<class name= "com.RegUserWith_GcAndPaypal.tc__VariationProductForReg_InGcAndPaypal" />      
+		
+	<!-- check out  paypal  -->		   
+		<class name= "com.RegUserWith_Checkout_Paypal.tc__Bundle_GcAndAllPromotions_Reg_InCheckoutPaypal" />
+		<class name= "com.RegUserWith_Checkout_Paypal.tc__BundleProductForRegUser_InCheckoutPaypal" />
+		<class name= "com.RegUserWith_Checkout_Paypal.tc__BySearchingProduct_RegUser_InCheckoutPaypal" />
+		<class name= "com.RegUserWith_Checkout_Paypal.tc__OnlyGiftCards_Checkout_Paypal" />
+		<class name= "com.RegUserWith_Checkout_Paypal.tc__PaypalFromCheckoutPage_RegUser" />
+		<class name= "com.RegUserWith_Checkout_Paypal.tc__ProductSetForRegUser_InCheckoutPaypal" />
+		
+		<class name= "com.RegUserWith_Checkout_Paypal.tc__SimpleProductAndGc_InCheckout_Paypal" />
+		<class name= "com.RegUserWith_Checkout_Paypal.tc__SimpleProductForRegUser_InPaypal" />    	
+		<class name= "com.RegUserWith_Checkout_Paypal.tc__SimpleProductsAndBundle_Gc_InCheckout_Paypal" />
+		<class name= "com.RegUserWith_Checkout_Paypal.tc__VariationProductForGuestUser_InCheckoutPaypal" />  
+		
+	<!--  view cart paypal -->	
+		
+		<class name= "com.RegUserWith_ViewCart_Paypal.tc__Bundle_GcAndAllPromotions_Reg_InVC_Paypal" />
+		<class name= "com.RegUserWith_ViewCart_Paypal.tc__BundleProductReg_InVC_Paypal" />
+		<class name= "com.RegUserWith_ViewCart_Paypal.tc__BySearchingProduct_Reg_InVC_Paypal" />
+		<class name= "com.RegUserWith_ViewCart_Paypal.tc__OnlyGiftCards_Reg_InVC_Paypal" />
+		<class name= "com.RegUserWith_ViewCart_Paypal.tc__PdpPage_Reg_InVC_Paypal" />	
+		<class name= "com.RegUserWith_ViewCart_Paypal.tc__ProductSetForReg_InVC_Paypal" />
+		<class name= "com.RegUserWith_ViewCart_Paypal.tc__simpleProductAndGc_Reg_InVC_Paypal" />
+		<class name= "com.RegUserWith_ViewCart_Paypal.tc__SimpleProductReg_InVC_Paypal" />
+		<class name= "com.RegUserWith_ViewCart_Paypal.tc__SimpleProductsAndBundle_Gc_Reg_InVC_Paypal" />
+		<class name= "com.RegUserWith_ViewCart_Paypal.tc__VariationProductReg_InVC_Paypal" /> 
+		
+		
+				<!--  Mini cart paypal 	 -->
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__Bundle_GcAndAllPromotions_Reg_InMC_Paypal" />
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__BundleProductForReg_InMC_Paypal" />
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__BySearchingProduct_Reg_InMC_Paypal" />
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__OnlyGiftCards_Reg_InMC_Paypal" />
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__PaypalReg_InMC_Paypal" />
+		
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__ProductSetForReg_InMC_Paypal" />
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__SimpleProductAndGc_Reg_InMC_Paypal" />
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__SimpleProductForReg_InMC_Paypal" />
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__SimpleProductsAndBundle_Gc_Reg_InMC_Paypal" />
+		<class name= "com.RegUserWith_MiniCart_Paypal.tc__VariationProductForReg_InMC_Paypal" /> 
+		
+				
+	<!-- logout  -->		
+	     
     	
     	<class name="com.providio.logout.tc__LogOut"/>
 	    	

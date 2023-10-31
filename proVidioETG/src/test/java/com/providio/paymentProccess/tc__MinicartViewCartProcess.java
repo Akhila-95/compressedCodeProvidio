@@ -64,6 +64,10 @@ public class tc__MinicartViewCartProcess extends baseClass {
 						validation.validateViewCartClick();
 						Thread.sleep(1000);
 						
+						//display of shipping method in cart page
+						viewCartPage vcp = new viewCartPage(driver);
+						vcp.noShippingMethodForOnlyGiftCertificate(driver);
+						
 						CartPageValidation cartPage =new CartPageValidation();
 						cartPage.cartPage(driver);
 		            }

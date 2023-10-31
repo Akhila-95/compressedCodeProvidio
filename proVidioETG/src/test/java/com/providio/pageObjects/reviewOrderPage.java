@@ -9,7 +9,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class reviewOrderPage {
+import com.providio.testcases.baseClass;
+
+public class reviewOrderPage extends baseClass{
 	
 WebDriver lDriver;
 	
@@ -34,11 +36,13 @@ WebDriver lDriver;
 		    		// js.executeScript("arguments[0].click();",reviewOrderPage);
 		    		 Thread.sleep(1000);
 		    		 reviewOrderPage.click();
+		    		 test.info("Clicked on review order button");
 		    	}
 	    	}
 	  if((reviewOrderPage.isDisplayed() )&& !(creditcardscheck.size()>0)) {
 	    	js.executeScript("arguments[0].click();",reviewOrderPage);
 	    	Thread.sleep(3000);
+	    	 test.info("Clicked on review order button");
 	  }
     }
   
@@ -60,11 +64,13 @@ WebDriver lDriver;
 	    			js.executeScript("window.scrollBy(0,100)", "");
 	    		 //placetheorderwithJsExuter.click();
 	    		 js.executeScript("arguments[0].click();", placetheorderwithJsExuter);
+	    		 test.info("Clicked on place order button");
 		    		Thread.sleep(4000);	    			    		
 	    	 }else if(!(creditcardscheck.size()>0)) {  
 	    			js.executeScript("window.scrollBy(0,100)", "");
 	    			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", placetheorderwithJsExuter);
-	    		 js.executeScript("arguments[0].click();", placetheorderwithJsExuter);
+		    		 js.executeScript("arguments[0].click();", placetheorderwithJsExuter);
+		    		 test.info("Clicked on place order button");
 		    		Thread.sleep(4000);	    			    		
 	    	 }
 	    	 

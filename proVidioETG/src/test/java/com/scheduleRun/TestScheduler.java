@@ -37,11 +37,7 @@ public class TestScheduler {
         
      // Define multiple triggers for scheduling the job at different times of the day
        
-        Trigger trigger0 = TriggerBuilder.newTrigger()
-                .withIdentity("testTrigger0", "group")
-                .withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(17, 0))
-                .build();
-        
+      
         Trigger trigger1 = TriggerBuilder.newTrigger()
             .withIdentity("testTrigger1", "group1")
             .withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(6, 0))
@@ -49,19 +45,19 @@ public class TestScheduler {
 
         Trigger trigger2 = TriggerBuilder.newTrigger()
             .withIdentity("testTrigger2", "group2")
-            .withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(20, 12))
+            .withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(22, 00))
             .build();
 
         Trigger trigger3 = TriggerBuilder.newTrigger()
             .withIdentity("testTrigger3", "group2")
-            .withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(23, 30))
+            .withSchedule(CronScheduleBuilder.dailyAtHourAndMinute(00, 30))
             .build();
 
         // Start the scheduler
-        scheduler.scheduleJob(job3, trigger0);
-        scheduler.scheduleJob(job, trigger1);
+       // scheduler.scheduleJob(job3, trigger0);
+       // scheduler.scheduleJob(job, trigger1);
         scheduler.scheduleJob(job1, trigger2);
-        scheduler.scheduleJob(job2, trigger3);
+       // scheduler.scheduleJob(job2, trigger3);
         scheduler.start();
 
         // Output a message indicating the execution times

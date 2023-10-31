@@ -353,14 +353,15 @@ public class productDescriptionPage extends baseClass{
 
     // Method to click on the "Buy Now" button in PDP page
     public void clickOnBuyNowButton(WebDriver driver) {
+    	
         JavascriptExecutor js = (JavascriptExecutor)driver;
         js.executeScript("arguments[0].click();", buyNowButton);
+        
     }
 
     // WebElement for the "Paypal Buy Now" button
     @FindBy(xpath = "//div[contains(@class,'salesforce-buynow-element ')]")
     WebElement paypalBuyNow;
-
     // Method to click on the "Paypal Buy Now" button
     public void clickOnPaypalBuyNow(WebDriver driver) {
         if(paypalBuyNow.isDisplayed()) {
@@ -379,7 +380,7 @@ public class productDescriptionPage extends baseClass{
     	//listing the yopto reviews
     	List<WebElement> yoptoReviewList = driver.findElements(By.cssSelector("div#yotpo-bottomline-top-div"));
     	if(yoptoReviewList.size()>0) {
-    		test.info("Yopto reviews are activated");
+    	
     		//clicking on yopto stars to scroll to review section
     		WebElement yoptoStars= driver.findElement(By.cssSelector("span.yotpo-stars"));
     		js.executeScript("arguments[0].click();",yoptoStars);

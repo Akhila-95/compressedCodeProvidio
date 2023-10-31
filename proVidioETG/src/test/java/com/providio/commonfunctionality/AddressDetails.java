@@ -31,13 +31,13 @@ public class AddressDetails extends baseClass {
         	WebElement shippingLabelDisplay= driver.findElement(By.xpath("(//h2[contains(text(),'Shipping')])[2]"));
             	
             	if(shippingLabelDisplay.isDisplayed() && (enterAddressList.size()>0)) {
-            		
-	            	checkOutPage cp = new checkOutPage(driver);
-	            	
-	            	//selecting shipping address
-	            	commonProccess.selectShippingAddress(cp);
-
-		            commonProccess.selectPaymentMethod(cp);
+	            		
+		            	checkOutPage cp = new checkOutPage(driver);
+		            	
+		            	//selecting shipping address
+		            	commonProccess.selectShippingAddress(cp);
+	
+			            commonProccess.selectPaymentMethod(cp);
 		            
             	}else if(pickUpStoreLabel.size()>0) {
 	            	

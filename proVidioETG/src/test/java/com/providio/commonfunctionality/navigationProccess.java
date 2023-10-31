@@ -62,7 +62,8 @@ public class navigationProccess extends baseClass {
 			//selecting attributes from the  pdp page by checking the condition 
 				List<WebElement> pdpPage = driver.findElements(By.xpath("//button[contains(@class,'add-to-cart btn btn-primary')]"));
 		   		 if( pdpPage.size()>0) {
-		   			allAttributesinOneFile.selectTheAttributesInPdp(driver);
+		   			allAttributesinOneFile.allAttributes();
+		   			Thread.sleep(2000);
 			    		 }  	 
 			
 			// no Product add to cart validation for buy now 

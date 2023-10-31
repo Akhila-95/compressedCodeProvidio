@@ -32,6 +32,12 @@ public class tc__CreditCardPaymentProcess extends baseClass{
 					// Validate the payment page
 					preValidationCheck.validatePaymentButtonClk();
 			       
+					// total price of products 
+					List<WebElement> totalPriceList = driver.findElements(By.xpath("//span[@class='grand-total-sum']"));
+					if(totalPriceList.size()>0) {
+						WebElement totalPrice = driver.findElement(By.xpath("//span[@class='grand-total-sum']"));
+						test.info("The total price of products is " + totalPrice.getText());
+					}					
 					// Detect payment methods
 					// Brain Tree
 					List<WebElement> brainTree = driver.findElements(By.xpath("//a[@class ='nav-link creditcard-tab active']"));
@@ -52,7 +58,9 @@ public class tc__CreditCardPaymentProcess extends baseClass{
 				    if(brainTree.size()>0) {
 				    	
 				    	bpm.BrainTreeMethod();
-				    	//bpm.addNewCardThoughExistingCards();
+				    	
+				    	//adding new card to account				    	
+				    		//bpm.addNewCardThoughExistingCards();
 				    	
 				    } else if(creditcardsSalesForce.size()>0) {
 				    	
@@ -60,10 +68,10 @@ public class tc__CreditCardPaymentProcess extends baseClass{
 				    	
 				    } else if(stripePayment.size()>0) {
 				    	
-				    	//bpm.stripe();	
+				    	bpm.stripe();	
 				    	
 				    	//wantedly calling 
-				    		 bpm.addNewCardThoughExistingCards();
+				    		// bpm.addNewCardThoughExistingCards();
 				    	
 				    } else if(cyberSourcePayment.size()>0){
 				    	
@@ -114,8 +122,13 @@ public class tc__CreditCardPaymentProcess extends baseClass{
 		    		
 		    	     // Order number and order date
 		    			 checkout.ordernumberandOrderdate();
-		    			 Thread.sleep(5000);
-		    		}	 
+		    			 //Thread.sleep(5000);
+		    		}else if(driver.findElements(By.xpath("//p[contains(text(),'There was a problem processing your payment. Please verify your payment information and try again.')]")).size()>0) {
+		    			
+		    			test.info("Returned back to payment page , as the Expected behaviour in brain tree is, the order will be failed for 2000-2999.99 $ ,3000.00-3000.99 $ 5000.00 $ ");
+	
+		    	
+		    		}
 				}
 		  }else {
 			  test.fail("Nex payment button is not enabled and clicked ");

@@ -23,14 +23,16 @@ public class CommonProccessFromMiniCartForViewCartAndCheckout extends baseClass 
 	        logger.info(continueasAGuest.size());
 
 	        if (continueasAGuest.size() > 0) {
-		            guestUserLoginPage guestLoginPage = new guestUserLoginPage(driver);
-		            guestLoginPage.clickOnGuestCheckOut();
-		            logger.info("Guest checkout");
-		            guestLoginPage.clickOnEmail(reEnterMail);
-		            logger.info("Guest mail again");
-		            guestLoginPage.clickOnContinueAsGuest();
-		            logger.info("Guest user : continue's  as guest");
-	            //Thread.sleep(5000L);
+	        	 //if guest checkout label is displayed then only this if condition executes 
+	        	 	if(driver.findElement(By.xpath("//button[contains(text(),'Guest Checkout')]")).isDisplayed()) {
+			            guestUserLoginPage guestLoginPage = new guestUserLoginPage(driver);
+			            guestLoginPage.clickOnGuestCheckOut();
+			            logger.info("Guest checkout");
+			            guestLoginPage.clickOnEmail(reEnterMail);
+			            logger.info("Guest mail again");
+			            guestLoginPage.clickOnContinueAsGuest();
+			            logger.info("Guest user : continue's  as guest");	           
+	        	 	}
 	          
 	        }
 	  
@@ -66,10 +68,10 @@ public class CommonProccessFromMiniCartForViewCartAndCheckout extends baseClass 
 						        		 		//selectingRandomSavedShippingAddress();
 									        				        
 									      //if user want to add new address though having saved address
-						        		 		 addNewAddress(cp);
+						        		 		// addNewAddress(cp);
 							            
 						        	 }else{
-								        test.info("User logged-in and have no saved cards");
+								        test.info("User logged-in and have no saved  address");
 								        		
 								          //Enters name and address			        	
 									        	shippingAddressDetailsWithName(cp);	
@@ -203,7 +205,7 @@ public class CommonProccessFromMiniCartForViewCartAndCheckout extends baseClass 
 			  WebElement firstName = driver.findElement(By.xpath("//input[@id='shippingFirstNamedefault']"));
 			  
 			if(firstName.isDisplayed()) {
-				test.info("Adding New address though having the address");
+			//	test.info("Adding New address though having the address");
 		        cp.setFisrtName(fname);	
 		        logger.info("Entered shipping fname");
 		        test.info("Entered shipping fname");
@@ -268,7 +270,7 @@ public class CommonProccessFromMiniCartForViewCartAndCheckout extends baseClass 
 	      	
 	      	  Random random = new Random();
 	      	  
-	          int randomNumber =  random.nextInt(900) + 100; // Generates a random number between 100 and 999     random.nextInt(900) + 100
+	          int randomNumber =  random.nextInt(900) + 100; // Generates a random number between 100 and 999     
 	          address = String.valueOf(randomNumber);
 	          Thread.sleep(1000);
 	          shippingAddress.sendKeys(address);

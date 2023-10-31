@@ -67,7 +67,8 @@ public class tc__PaymentProccessByGC extends baseClass{
 			        element = element.replace(" ", "");
 			        dataList.set(i, element);
 			    }
-	
+			 // Remove empty strings (commas) from the dataList
+			    dataList.removeIf(String::isEmpty);
 			    // Print the updated dataList
 			 
 				logger.info(dataList);
@@ -219,12 +220,12 @@ public class tc__PaymentProccessByGC extends baseClass{
 	        List<String> dataList = readDataFromExcel(filePath, sheetName);
 	        int totalProducts = dataList.size();
 	        
-	     // Remove spaces from each element in the dataList
-		    for (int i = 0; i < dataList.size(); i++) {
-		        String element = dataList.get(i);
-		        element = element.replace(" ", "");
-		        dataList.set(i, element);
-		    }
+//	     // Remove spaces and non-alphanumeric characters from the dataList
+//	        for (int i = 0; i < dataList.size(); i++) {
+//	            String element = dataList.get(i);
+//	            element = element.replaceAll("[^a-zA-Z0-9]", ""); // This regular expression removes non-alphanumeric characters
+//	            dataList.set(i, element);
+//	        }
 
 		    // Print the updated dataList
 		 
@@ -291,12 +292,11 @@ public class tc__PaymentProccessByGC extends baseClass{
 				                    giftCertificate.clear();
 				                }
 			
-				                if (driver.findElements(By.xpath("//div[contains(text(),'Your order has no balance, so no payment method is necessary to complete this order')]")).size() != 0) {
-				                    logger.info("Your order has no balance, so no payment method is necessary");
-				                    giftCertificate.clear();
-				                    break;
-				                } else {
-				                    iterator.remove(); // Safely remove the element from the list
+				                if (driver.findElements(By.xpath("//div[contains(text(),'Please enter a gift certificate code.')]")).size() != 0) {
+				                	   logger.info("Enter the gift certificate");
+				                		break;
+				                } else {  				                	
+				                	iterator.remove(); // Safely remove the element from the list
 				                    logger.info("After applying GC we have this in datalist: " + dataList);
 				                    Thread.sleep(5000);
 				                    operations++;

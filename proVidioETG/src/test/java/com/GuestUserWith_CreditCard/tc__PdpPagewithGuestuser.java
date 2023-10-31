@@ -60,8 +60,8 @@ public class tc__PdpPagewithGuestuser extends baseClass {
 	private void writeReviewForProduct() throws InterruptedException {
 		List<WebElement> bopis =driver.findElements(By.xpath("(//span[@class='write-question-review-button-text font-color-gray-darker'])[1]"));
 		productDescriptionPage pdp = new productDescriptionPage(driver);
-		WebElement bopisDisplay =driver.findElement(By.xpath("(//span[@class='write-question-review-button-text font-color-gray-darker'])[1]"));
-		if(!(bopis.size()>0) && bopisDisplay.isDisplayed()) {
+		
+		if(!(bopis.size()>0) && (driver.findElement(By.xpath("(//span[@class='write-question-review-button-text font-color-gray-darker'])[1]")).isDisplayed())) {
 		    
 		    pdp.clickOnWriteAReviewAtTop(driver);
 		    logger.info("Clicked on Write a Review at the top");
@@ -86,14 +86,12 @@ public class tc__PdpPagewithGuestuser extends baseClass {
 		    pdp.clickOncontinueShoping(driver);
 		    logger.info("clicked on the clickOncontinueShoping button");
 		}else {
-			logger.info("Another review is activated");
-			test.info("Another review is activated");
+			logger.info("Yopto reviews are activated");
+			test.info("Yopto reviews are activated");			
+			pdp.yoptpoReviews();
 		}	    	    
 	}
 
-
-
-	
 	private void validateReviewProduct() {
 		
 		test.info("validate the Review of the product");

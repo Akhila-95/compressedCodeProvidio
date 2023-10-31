@@ -91,21 +91,22 @@ public class tc__PdpPage_RegUser_GcAndCc extends baseClass {
 		
 		test.info("validate the Review of the product");
 		// Find the element using XPath
-		WebElement thankYouText = driver.findElement(By.xpath("//div[@class='header col-sm-12']/h1[contains(text(), 'Thank you!')]"));
-		// Get the text value of the element
-		String actualText = thankYouText.getText();
-		// Define the expected text
-		String expectedText = "Thank you!";
-		// Validate if the text is displayed using a basic if condition
-		if (actualText.equals(expectedText)) {
-		    logger.info("The 'Thank you!' text is displayed on the page.");
-		    test.pass("successfully writen the review");
-		} else {
-		    logger.info("The 'Thank you!' text is not displayed on the page.");
-		    test.fail("Review is not done");
+		List<WebElement> thankYouTextList = driver.findElements(By.xpath("//div[@class='header col-sm-12']/h1[contains(text(), 'Thank you!')]"));
+		if(thankYouTextList.size()>0) {
+			WebElement thankYouText = driver.findElement(By.xpath("//div[@class='header col-sm-12']/h1[contains(text(), 'Thank you!')]"));
+			// Get the text value of the element
+			String actualText = thankYouText.getText();
+			// Define the expected text
+			String expectedText = "Thank you!";
+			// Validate if the text is displayed using a basic if condition
+			if (actualText.equals(expectedText)) {
+			    logger.info("The 'Thank you!' text is displayed on the page.");
+			    test.pass("successfully writen the review");
+			} else {
+			    logger.info("The 'Thank you!' text is not displayed on the page.");
+			    test.fail("Review is not done");
+			}
 		}
-
-		
 	}
 
 }

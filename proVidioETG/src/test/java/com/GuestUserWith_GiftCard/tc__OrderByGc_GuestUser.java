@@ -23,7 +23,6 @@ public class tc__OrderByGc_GuestUser extends baseClass {
 				// to pick the store
 			     findAStore  store = new findAStore();
 			     store.findStore();
-
 	          
 	          // selects a random catgory and product add to cart
 		          navigationProccess navProccess = new navigationProccess();
