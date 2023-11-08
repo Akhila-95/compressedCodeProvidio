@@ -164,4 +164,38 @@ public class readConfig {
         String reEnterEmail = this.pro.getProperty("reEnterMail");
         return reEnterEmail;
     }
+    public String SimpleProduct() {
+        String simpleProduct = this.pro.getProperty("SimpleProduct");
+        return simpleProduct;
+    }
+    
+    public String BundleProduct() {
+        String bundleProduct = this.pro.getProperty("BundleProduct");
+        return bundleProduct;
+    }
+    
+    public String VariousProdcut() {
+        String variousProdcut = this.pro.getProperty("VariousProdcut");
+        return variousProdcut;
+    }
+    public String ProductSet() {
+        String productSet = this.pro.getProperty("ProductSet");
+        return productSet;
+    }
+    public String GiftCerificateCodeforGc() {
+        String giftCerificateCodeforGc = this.pro.getProperty("GiftCerificateCodeforGc");
+        return giftCerificateCodeforGc;
+    }
+    public String GiftCertificatesforPaypal() {
+        String giftCertificatesforPaypal = this.pro.getProperty("GiftCertificatesforPaypal");
+        return giftCertificatesforPaypal;
+    }
+    public String Report() {
+        String report = this.pro.getProperty("Report");
+        return report;
+    }
+    public String ReportScreenshot() {
+        String reportScreenshot = this.pro.getProperty("ReportScreenshot");
+        return reportScreenshot;
+    }
 }

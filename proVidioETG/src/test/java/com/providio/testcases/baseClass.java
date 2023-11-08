@@ -40,7 +40,7 @@ import com.aventstack.extentreports.MediaEntityBuilder;
 public class baseClass {
 	
 	
-	readConfig readconfig = new readConfig();
+	static readConfig readconfig = new readConfig();
 	
 	//logindetails
 	public String baseURL=readconfig.getApplicationURL();
@@ -90,13 +90,24 @@ public class baseClass {
 	public String guestPassword = readconfig.getGuestPassword();
 	public String reEnterMail=readconfig.getReEnterMail();
 
+	//excel file locations
+	
+	public String SimpleProduct = readconfig.SimpleProduct();
+	public String BundleProduct = readconfig.BundleProduct();
+	public String VariousProdcut = readconfig.VariousProdcut();
+	public String ProductSet = readconfig.ProductSet();
+	public String GiftCerificateCodeforGc = readconfig.GiftCerificateCodeforGc();
+	public String GiftCertificatesforPaypal = readconfig.GiftCertificatesforPaypal();
+	public static String Report = readconfig.Report();
+	public static String ReportScreenshot = readconfig.ReportScreenshot();
+	 
 	
 	public static WebDriver driver;
 	public static   Logger logger ;
 	protected static boolean isLoggedIn=false;
 	
 	private static ExtentReports report = new ExtentReports();
-    private ExtentSparkReporter reporter = new ExtentSparkReporter("C:\\Users\\user\\git\\etg_main_repooo\\proVidioETG\\Reports\\ProvidioTestReport.html");
+    private ExtentSparkReporter reporter = new ExtentSparkReporter(Report);
 	
 	//Reporting
 	//static ExtentReports report;
@@ -187,14 +198,14 @@ public class baseClass {
 		   report.flush();
 		   
 
-		    driver.get("C:\\Users\\user\\git\\etg_main_repooo\\proVidioETG\\Reports\\ProvidioTestReport.html");
+		    driver.get(Report);
 			driver.manage().window().maximize();
 			Thread.sleep(5000);
 			// Take a screenshot of the entire browser window
 			File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
 
 			// Define the destination path for the screenshot
-			String screenshotPath = "C:\\Users\\user\\git\\etg_main_repooo\\proVidioETG\\Reports\\ReportsScreenshot.png";
+			String screenshotPath = ReportScreenshot;
 			// Save the screenshot to the specified path
 			FileUtils.copyFile(screenshot, new File(screenshotPath));
 

@@ -16,20 +16,22 @@ import javax.mail.internet.MimeMultipart;
 
 import org.apache.commons.mail.EmailException;
 
-public class reportToMail {
+import com.providio.testcases.baseClass;
+
+public class reportToMail extends baseClass{
 	
 	public static void Reporttomail() throws EmailException, UnknownHostException {
 
 	    System.out.println("Email is starting to send");
-	    final String username = "akhireddy9642@gmail.com";
-	    final String password = "cwsclswzktrlwiol";
-	    String smtpHost = "smtp.gmail.com";
+	    final String username = "upendra.y@etg.digital";
+	    final String password = "Xog32763";
+	    String smtpHost = "smtp.office365.com";
 	    int smtpPort = 587;
 	    
 	    //normal mail
 	    
-	    //akhireddy9642@gmail.com
-	    //cwsclswzktrlwiol
+	    //upendrareddy1212@gmail.com
+	    //hqpolukazazrvlbi
 	    //smtp.gmail.com
 	    
 	    //pro
@@ -37,25 +39,25 @@ public class reportToMail {
 	    //Xog32763
 	    //smtp.office365.com
 	    
-	    String reportFilePath = "C:\\Users\\user\\git\\etg_main_repooo\\proVidioETG\\Reports\\ProvidioTestReport.html";
+	    String reportFilePath = Report;
         String subject1 = "Automation Test Report of Provido Project Report";
         String body1 = "Please find the attached Automation Test Report of Provido Project.";
 
-	    String reportScreenshot = "C:\\Users\\user\\git\\etg_main_repooo\\proVidioETG\\Reports\\ReportsScreenshot.png";
+	    String reportScreenshot = ReportScreenshot;
 	    String subject2 = "And Screenshot";
-	    String body2 = "Please find the attached screenshot Automation Test Report of Provido Project";
+	    //String body2 = "Please find the attached screenshot Automation Test Report of Provido Project";
 
-	  // String[] recipients = { "krishnarjun.c@etg.digital","shankar.challa@etg.digital", "akhila.v@etg.digital","pushpa.s@etg.digital","bhavya.a@etg.digital","bhaskarrao.s@etg.digital","niveditha.d@etg.digital","salma.s@etg.digital","f8eecde2.etggs.com@apac.teams.ms","upendra.y@etg.digital"};
-	   String[] recipients = {"akhila.m@etg.digital","upendra.y@etg.digital"};
+	   //String[] recipients = { "krishnarjun.c@etg.digital","shankar.challa@etg.digital", "akhila.v@etg.digital","pushpa.s@etg.digital","bhavya.a@etg.digital","bhaskarrao.s@etg.digital","niveditha.d@etg.digital","salma.s@etg.digital","f8eecde2.etggs.com@apac.teams.ms","akhila.m@etg.digital"};
+	    String[] recipients = { };
 	    //
 
-	    sendEmail(username, password, smtpHost, smtpPort, recipients,subject1, body1, reportFilePath, reportScreenshot, body2, subject2);
+	    sendEmail(username, password, smtpHost, smtpPort, recipients,subject1, body1, reportFilePath, reportScreenshot,  subject2);
 
 	    System.out.println("Email sent successfully.");
 	}
 
 	private static void sendEmail(final String username, final String password, String smtpHost, int smtpPort, String[] recipients,
-            String subject1, String body1, String reportFilePath,String reportScreenshot, String body2,String subject2) {
+            String subject1, String body1, String reportFilePath,String reportScreenshot, String subject2) {
 		
 
 	    Properties props = new Properties();
@@ -63,7 +65,7 @@ public class reportToMail {
 	    props.put("mail.smtp.starttls.enable", "true");
 	    props.put("mail.smtp.host", smtpHost);
 	    props.put("mail.smtp.port", smtpPort);
-	    props.put("mail.smtp.ssl.trust", "smtp.gmail.com");
+	    props.put("mail.smtp.ssl.trust", "smtp.office365.com");
 	    props.put("mail.smtp.debug", "true");
 
 	    Session session = Session.getInstance(props, new Authenticator() {
@@ -89,8 +91,8 @@ public class reportToMail {
             BodyPart messageBodyPart1 = new MimeBodyPart();
             messageBodyPart1.setText(body1);
             
-	        BodyPart messageBodyPart2 = new MimeBodyPart();
-	        messageBodyPart2.setText(body2);
+	        //BodyPart messageBodyPart2 = new MimeBodyPart();
+	       // messageBodyPart2.setText(body2);
             
          // Create the message part for the attachment
             MimeBodyPart attachmentPart1 = new MimeBodyPart();
@@ -102,7 +104,7 @@ public class reportToMail {
 	        // Create a multipart message and set its parts
             Multipart multipart = new MimeMultipart();
             multipart.addBodyPart(messageBodyPart1);
-            multipart.addBodyPart(messageBodyPart2);
+            //multipart.addBodyPart(messageBodyPart2);
 		    multipart.addBodyPart(attachmentPart1);
 		    multipart.addBodyPart(attachmentPart2);
 

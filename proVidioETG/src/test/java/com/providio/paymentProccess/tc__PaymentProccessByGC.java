@@ -55,7 +55,7 @@ public class tc__PaymentProccessByGC extends baseClass{
 	public void performRandomOperations(WebDriver driver) throws InterruptedException {
 		//driver.get(baseURL);
 		//logger.info("enterd into url");
-		String filePath = "C:\\Users\\user\\git\\compressedCode\\proVidioETG\\testDate\\GiftCertificateCodesForGc.xlsx";
+		String filePath =  GiftCerificateCodeforGc ;
 		String sheetName = "GC_Codes";
 
 		try {
@@ -213,7 +213,7 @@ public class tc__PaymentProccessByGC extends baseClass{
 	
 	public void performSequentialOperations(WebDriver driver) throws InterruptedException {
 		
-	    String filePath = "C:\\Users\\user\\git\\compressedCode\\proVidioETG\\testDate\\GiftCertificateCodesForGc.xlsx";
+	    String filePath =GiftCertificatesforPaypal;
 	    String sheetName = "GC_Codes";
 
 	    try {

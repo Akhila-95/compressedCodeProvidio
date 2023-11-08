@@ -7,6 +7,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 import com.providio.Validations.Checkout_Validation;
+import com.providio.Validations.miniCartAndCartValidation;
 import com.providio.pageObjects.miniCartPage;
 import com.providio.pageObjects.paymentpPage;
 import com.providio.pageObjects.reviewOrderPage;
@@ -15,7 +16,7 @@ import com.providio.testcases.baseClass;
 
 public class tc__CheckOutProcessByPayPal extends baseClass{
 		
-	 Checkout_Validation checkout= new Checkout_Validation();
+	miniCartAndCartValidation minicart= new miniCartAndCartValidation();
 	 
 	    public void checkoutprocessFromMiniCart() throws InterruptedException {
 
@@ -31,7 +32,7 @@ public class tc__CheckOutProcessByPayPal extends baseClass{
 		                mc.clickcartbuttonjs(driver);
 		                Thread.sleep(2000);
      
-		                checkout.validateMiniCartClick();
+		                minicart.validateMiniCartClick();
 		                       
 					//paypal checkout process
 		                
@@ -112,13 +113,13 @@ public class tc__CheckOutProcessByPayPal extends baseClass{
 				               // Checkout_Validation checkout= new Checkout_Validation();
 				                
 					           //validate minicart
-					           checkout.validateMiniCartClick();
+				                minicart.validateMiniCartClick();
 					            logger.info("Validated minicart");
 					            
 					            mc.clickviewCartButton(driver);
 					            logger.info("Clicked on view cart button"  );
 					            
-					            checkout.validateViewCartClick();
+					            minicart.validateViewCartClick();
 					            logger.info("Validated the view cart ");
 					            
 					            viewCartPage vcp = new viewCartPage(driver);
